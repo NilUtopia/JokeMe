@@ -1,0 +1,3 @@
+rootProject.name='JokeMe'
+include ':app'
+include ':mylibrary'
