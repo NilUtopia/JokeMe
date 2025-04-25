@@ -46,7 +46,7 @@ jobs:
           <html lang="en">
           <head>
               <meta charset="UTF-8">
-              <title>Taggstar Android SDK Reports</title>
+              <title>Project Reports</title>
               <style>
                   body { font-family: Arial, sans-serif; margin: 40px; }
                   h1 { color: #333; }
@@ -65,7 +65,7 @@ jobs:
               </style>
           </head>
           <body>
-              <h1>Taggstar Android SDK Reports</h1>
+              <h1>Project Reports</h1>
               <ul>
                   <li><a href="dokka/index.html">📚 View SDK Reference</a></li>
                   <li><a href="tests/index.html">✅ View Test Summary</a></li>
