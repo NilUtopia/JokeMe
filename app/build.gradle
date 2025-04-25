@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.demo.jokeme"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         compileSdk 34
         versionCode 1
         versionName "1.0"
@@ -38,14 +38,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.core:core-ktx:1.13.0'
-    implementation "androidx.activity:activity-ktx:1.9.0"
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation libs.kotlin.stdlib
+    implementation libs.appcompat
+    implementation libs.core.ktx
+    implementation libs.activity.ktx
+    implementation libs.constraintlayout
+    implementation libs.retrofit
+    implementation libs.converter.gson
+    testImplementation libs.junit
+    androidTestImplementation libs.junit
+    androidTestImplementation libs.espresso.core
 }
