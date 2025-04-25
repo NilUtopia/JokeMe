@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">JokeMe</string>
-    <string name="joke_lost">Joke lost! Try again.</string>
-    <string name="tell_me_a_joke">tell me a joke</string>
-    <string name="epic_face">epic_face</string>
-</resources>

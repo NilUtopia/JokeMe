@@ -1,0 +1,9 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.nilutopia.mylibrary////PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/index.html
+$dokka.location:com.nilutopia.mylibrary//calculateDistanceTo/com.nilutopia.mylibrary.Point#com.nilutopia.mylibrary.Point/PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/calculate-distance-to.html
+$dokka.location:com.nilutopia.mylibrary/Point///PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/-point/index.html
+$dokka.location:com.nilutopia.mylibrary/Point/Point/#kotlin.Double#kotlin.Double/PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/-point/-point.html
+$dokka.location:com.nilutopia.mylibrary/Point/x/#/PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/-point/x.html
+$dokka.location:com.nilutopia.mylibrary/Point/y/#/PointingToDeclaration/mylibrary/com.nilutopia.mylibrary/-point/y.html
+com.nilutopia.mylibrary

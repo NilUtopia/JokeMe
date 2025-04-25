@@ -1,0 +1,1 @@
+sourceset_dependencies='{":mylibrary/debug":[],":mylibrary/main":[],":mylibrary/release":[]}'
