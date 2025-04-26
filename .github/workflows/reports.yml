@@ -28,17 +28,30 @@ jobs:
       - name: Run tests and generate report
         run: ./gradlew testReleaseUnitTest
 
+      - name: Generate Jacoco code coverage report
+        run: ./gradlew jacocoCodeCoverage
+
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          jacoco-csv-file: mylibrary/build/reports/jacoco/test/jacocoTestReport.csv
+          badges-directory: mylibrary/build/reports/jacoco/test/html/badges
+
       - name: Prepare artifacts
         run: |
           # Create directory structure
           mkdir -p gh-pages/dokka
           mkdir -p gh-pages/tests
+          mkdir -p gh-pages/coverage
           
           # Copy Dokka documentation
           cp -r mylibrary/build/dokka/html/* gh-pages/dokka/
           
           # Copy test reports
           cp -r mylibrary/build/reports/tests/testReleaseUnitTest/* gh-pages/tests/
+          
+          # Copy Jacoco code coverage reports
+          cp -r mylibrary/build/reports/jacoco/jacocoCodeCoverage/html/* gh-pages/coverage/
           
           # Create landing page
           cat << EOF > gh-pages/index.html
@@ -69,6 +82,7 @@ jobs:
               <ul>
                   <li><a href="dokka/index.html">📚 View SDK Reference</a></li>
                   <li><a href="tests/index.html">✅ View Test Summary</a></li>
+                  <li><a href="coverage/index.html">📊 View Code Coverage</a></li>
               </ul>
           </body>
           </html>

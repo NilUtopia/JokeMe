@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.maven.publish)
     alias(libs.plugins.dokka)
+    id("jacoco")
 }
 
 android {
@@ -67,4 +68,43 @@ publishing {
             }
         }
     }
+}
+
+val exclusions = listOf(
+    "**/R.class",
+    "**/R\$*.class",
+    "**/BuildConfig.*",
+    "**/Manifest*.*",
+    "**/*Test*.*",
+    "**/Fake*.*",
+)
+
+tasks.withType(Test::class) {
+    configure<JacocoTaskExtension> {
+        isIncludeNoLocationClasses = true
+        excludes = listOf("jdk.internal.*")
+    }
+}
+
+tasks.register<JacocoReport>("jacocoCodeCoverage") {
+    group = "Reporting"
+    description = "Generate Jacoco code coverage report"
+    reports {
+        csv.required.set(true)
+        html.required.set(true)
+    }
+    sourceDirectories.setFrom(layout.projectDirectory.dir("src/main"))
+    classDirectories.setFrom(
+        files(
+            fileTree(layout.buildDirectory.dir("intermediates/javac/release")) {
+                exclude(exclusions)
+            },
+            fileTree(layout.buildDirectory.dir("tmp/kotlin-classes/release")) {
+                exclude(exclusions)
+            }
+        ))
+    executionData.setFrom(
+        files(
+            fileTree(layout.buildDirectory) { include(listOf("jacoco/**/*.exec")) }
+        ))
 }
